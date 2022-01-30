@@ -30,7 +30,7 @@ linkerd install | Out-File -FilePath ".\linkerd\deploy.yaml"
 ```
 ### Linux:
 ```shell
-linkerd install | cat > /linkerd/deploy.yaml
+linkerd install | cat > linkerd/deploy.yaml
 ```
 ## Grafana loki
 ### Win
