@@ -39,3 +39,25 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      
+ ---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: monitoring
+spec:
+  destination:
+    name: ''
+    namespace: monitoring
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: kube-prom
+    repoURL: 'https://github.com/mlhauber/k8s-fault-detection-cluster.git'
+    targetRevision: main
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
