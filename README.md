@@ -35,13 +35,12 @@ linkerd install | cat > linkerd/deploy.yaml
 ## Grafana loki
 ### Win
 ```shell
-helm template grafana/loki-stack | Out-File -FilePath ".\loki\deploy.yaml"
+helm template logging grafana/loki-stack | linkerd inject - | Out-File -FilePath ".\loki\deploy.yaml"
 ```
 ### Linux
 ```shell
-helm template grafana/loki-stack | cat > loki/deploy.yaml
+helm template logging grafana/loki-stack | linkerd inject - | cat > loki/deploy.yaml
 ```
-
 
 ## Apply Changes
 ```shell
