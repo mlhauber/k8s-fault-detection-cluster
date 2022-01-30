@@ -25,14 +25,14 @@ kubectl apply -f createArgocdApps.yaml
 # Update external Dependencies
 ## Linkerd
 ### Win:
-linkerd install | Out-File -FilePath test.yaml
+`linkerd install | Out-File -FilePath test.yaml`
 ### Linux:
-linkerd install | cat > test.yaml
+`linkerd install | cat > test.yaml`
 ## Grafana loki
 ### Win
-helm template grafana/loki-stack | Out-File -FilePath test.yaml
+`helm template grafana/loki-stack | Out-File -FilePath test.yaml`
 ### Linux
-helm template grafana/loki-stack | cat > test.yaml
+`helm template grafana/loki-stack | cat > test.yaml`
 
 
 ## Apply Changes
