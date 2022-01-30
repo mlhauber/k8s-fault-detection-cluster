@@ -42,7 +42,19 @@ helm template logging grafana/loki-stack | linkerd inject - | Out-File -FilePath
 helm template logging grafana/loki-stack | linkerd inject - | cat > loki/deploy.yaml
 ```
 
+
+## Kube Prometheus Stack
+### Win
+```shell
+helm template monitoring prometheus-community/kube-prometheus-stack | linkerd inject - | Out-File -FilePath ".\kube-prom\deploy.yaml"
+```
+### Linux
+```shell
+helm template monitoring prometheus-community/kube-prometheus-stack | linkerd inject - | cat > kube-prom/deploy.yaml
+```
+
+
 ## Apply Changes
 ```shell
-kubectl apply -f createArgocdApps.yaml
+kubectl apply -f createArgocdApps.yaml -n argocd
 ```
