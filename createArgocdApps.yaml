@@ -1,0 +1,41 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: logging
+spec:
+  destination:
+    name: ''
+    namespace: logging
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: loki
+    repoURL: 'https://github.com/mlhauber/k8s-fault-detection-cluster.git'
+    targetRevision: develop
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: servicemesh
+spec:
+  destination:
+    name: ''
+    namespace: servicemesh
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: linkerd
+    repoURL: 'https://github.com/mlhauber/k8s-fault-detection-cluster.git'
+    targetRevision: develop
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
