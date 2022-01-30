@@ -17,7 +17,7 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
 3. Create Apps (Already injected for linkerd)
 ```shell
-kubectl apply -f createArgocdApps.yaml
+kubectl apply -f https://raw.githubusercontent.com/mlhauber/k8s-fault-detection-cluster/main/createArgocdApps.yaml
 ```
 
 
