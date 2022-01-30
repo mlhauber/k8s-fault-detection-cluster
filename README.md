@@ -26,16 +26,16 @@ kubectl apply -f createArgocdApps.yaml
 ## Linkerd
 ### Win:
 ```shell
-linkerd install | Out-File -FilePath test.yaml
+linkerd install | Out-File -FilePath ".\linkerd\deploy.yaml"
 ```
 ### Linux:
 ```shell
-linkerd install | cat > test.yam
+linkerd install | cat > test.yaml
 ```
 ## Grafana loki
 ### Win
 ```shell
-helm template grafana/loki-stack | Out-File -FilePath test.yaml
+helm template grafana/loki-stack | Out-File -FilePath ".\loki\deploy.yaml"
 ```
 ### Linux
 ```shell
