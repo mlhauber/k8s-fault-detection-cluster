@@ -43,20 +43,20 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: monitoring
+  name: kube-prometheus-stack
 spec:
   destination:
     name: ''
     namespace: monitoring
     server: 'https://kubernetes.default.svc'
   source:
-    path: kube-prom
+    path: kube-prometheus-stack
     repoURL: 'https://github.com/mlhauber/k8s-fault-detection-cluster.git'
     targetRevision: main
   project: default
   syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
     automated:
       prune: true
-      selfHeal: true
+      selfHeal: false
+    syncOptions:
+      - CreateNamespace=true
