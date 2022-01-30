@@ -10,7 +10,7 @@ spec:
   source:
     path: loki
     repoURL: 'https://github.com/mlhauber/k8s-fault-detection-cluster.git'
-    targetRevision: develop
+    targetRevision: main
   project: default
   syncPolicy:
     automated:
@@ -31,7 +31,7 @@ spec:
   source:
     path: linkerd
     repoURL: 'https://github.com/mlhauber/k8s-fault-detection-cluster.git'
-    targetRevision: develop
+    targetRevision: main
   project: default
   syncPolicy:
     automated:
