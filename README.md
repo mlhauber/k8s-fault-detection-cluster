@@ -30,7 +30,7 @@ linkerd install | Out-File -FilePath ".\linkerd\deploy.yaml"
 ```
 ### Linux:
 ```shell
-linkerd install | cat > test.yaml
+linkerd install | cat > /linkerd/deploy.yaml
 ```
 ## Grafana loki
 ### Win
@@ -39,7 +39,7 @@ helm template grafana/loki-stack | Out-File -FilePath ".\loki\deploy.yaml"
 ```
 ### Linux
 ```shell
-helm template grafana/loki-stack | cat > test.yaml
+helm template grafana/loki-stack | cat > loki/deploy.yaml
 ```
 
 
